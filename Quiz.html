@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Capital Quiz</title>
+</head>
+<body>
+  <h1>Capital Quiz</h1>
+  <p>Use lower case letter only</p>
+
+  <div id="q1">
+    <label for="answer1">What is the capital of Nepal?</label><br />
+    <input type="text" id="answer1" />
+    <button onclick="check1()">Submit</button>
+    <p id="out1"></p>
+  </div>
+
+  <div id="q2">
+    <label for="answer2">What is the capital of India?</label><br />
+    <input type="text" id="answer2" />
+    <button onclick="check2()">Submit</button>
+    <p id="out2"></p>
+  </div>
+
+  <div id="q3">
+    <label for="answer3">What is the capital of France?</label><br />
+    <input type="text" id="answer3" />
+    <button onclick="check3()">Submit</button>
+    <p id="out3"></p>
+  </div>
+
+  <p id="final" style="font-weight: bold;"></p>
+
+  <script>
+    function check1() {
+      const ans = document.getElementById('answer1').value.trim().toLowerCase();
+      const out = document.getElementById('out1');
+      if (ans === 'kathmandu') {
+        out.textContent = `The answer ${ans} is Correct!`;
+      } else {
+        out.textContent = `The answer ${ans} is Wrong!.The correct answer is kathmandu`;
+      }
+      document.getElementById('answer1').disabled = true;
+      document.querySelector('#q1 button').disabled = true;
+    }
+
+    function check2() {
+      const ans = document.getElementById('answer2').value.trim().toLowerCase();
+      const out = document.getElementById('out2');
+      if (ans === 'new delhi') {
+        out.textContent = `The answer ${ans} Correct!`;
+      } else {
+        out.textContent = `The answer ${ans} is Wrong!.The correct answer is new delhi`;
+      }
+      document.getElementById('answer2').disabled = true;
+      document.querySelector('#q2 button').disabled = true;
+    }
+
+    function check3() {
+      const ans = document.getElementById('answer3').value.trim().toLowerCase();
+      const out = document.getElementById('out3');
+      if (ans === 'paris') {
+        out.textContent = 'Correct!';
+      } else {
+        out.textContent = 'Wrong!';
+      }
+      document.getElementById('answer3').disabled = true;
+      document.querySelector('#q3 button').disabled = true;
+      document.getElementById('final').textContent = 'Quiz finished!';
+    }
+  </script>
+</body>
+</html>
